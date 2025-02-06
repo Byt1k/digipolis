@@ -1,0 +1,59 @@
+.header {
+  background-color: #fff;
+  box-shadow: 0 4px 17px 0 rgba(222, 225, 233, 0.73);
+}
+
+.top {
+  background-color: #202020;
+  padding: 15px 0;
+
+  .topContainer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 94px;
+
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+  }
+}
+
+.bottomContainer {
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu {
+  display: flex;
+  gap: 60px;
+
+  a {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    font-weight: 500;
+
+    &:hover {
+      color: #3162e0;
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  .mediaBtn {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    padding: 0;
+  }
+
+  .mailBtn {
+    margin-left: 15px;
+  }
+}

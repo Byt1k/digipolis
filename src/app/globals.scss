@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #f8f8f8;
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 16px;
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 110%;
+}
