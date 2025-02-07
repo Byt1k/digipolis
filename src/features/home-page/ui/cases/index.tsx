@@ -1,10 +1,10 @@
 'use client'
 
-import React, {useCallback, useState} from "react";
-import {Button, cases, Container, svgIcons} from "@/shared";
-import s from "./index.module.scss";
-import {Element} from "react-scroll";
-import classNames from "classnames";
+import React, { useCallback, useState } from 'react'
+import { Button, cases, Container, svgIcons } from '@/shared'
+import s from './index.module.scss'
+import { Element } from 'react-scroll'
+import classNames from 'classnames'
 
 export const Cases: React.FC = () => {
     const [selected, setSelected] = useState<number[]>([])
@@ -23,13 +23,23 @@ export const Cases: React.FC = () => {
                 <h2>Кейсы</h2>
                 <div className={s.wrapper}>
                     {cases.map((name, i) => (
-                        <div className={classNames(s.item, { [s.selected]: selected.some(index => i === index) })}>
+                        <div
+                            key={i}
+                            className={classNames(s.item, {
+                                [s.selected]: selected.some(
+                                    index => i === index,
+                                ),
+                            })}
+                        >
                             <div className={s.number}>{i + 1}</div>
                             <div className={s.content}>
                                 <p>{name}</p>
                                 <Button>Оставить заявку</Button>
                             </div>
-                            <button className={s.selectBtn} onClick={() => toggleSelected(selected, i)}>
+                            <button
+                                className={s.selectBtn}
+                                onClick={() => toggleSelected(selected, i)}
+                            >
                                 {svgIcons.check}
                             </button>
                         </div>
@@ -37,5 +47,5 @@ export const Cases: React.FC = () => {
                 </div>
             </Container>
         </Element>
-    );
-};
+    )
+}

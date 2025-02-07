@@ -3,7 +3,7 @@ export type ICalculatorService = {
     price: number
 }
 
-export const calculatorServices: ICalculatorService[]  = [
+export const calculatorServices: ICalculatorService[] = [
     { name: 'Разработка логотипа', price: 3000 },
     { name: 'Дизайн сайта', price: 10000 },
     { name: 'Посадочная страница (лендинг)', price: 25000 },

@@ -1,0 +1,43 @@
+.wrapper {
+    width: 100%;
+    position: relative;
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 15px 0;
+        border-bottom: 1px solid #8f8f8f;
+        background: transparent;
+        font-size: 18px;
+        font-weight: 500;
+
+        &:focus {
+            outline: none;
+        }
+
+        &::placeholder {
+        }
+    }
+
+    .notRequired {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        transform: translateY(100%);
+        font-size: 14px;
+        line-height: 14px;
+        font-weight: 500;
+        color: #b1b1b1;
+    }
+
+    label {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 18px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        transition: all 0.2s ease;
+    }
+}

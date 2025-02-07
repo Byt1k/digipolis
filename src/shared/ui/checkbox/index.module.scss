@@ -1,0 +1,37 @@
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    input {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+
+    .label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 32px;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: 2px solid #eee;
+
+        > svg {
+            transition: all 0.2s ease;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        &:has(> input:checked) {
+            background-color: #3162e0;
+            border: 2px solid #3162e0;
+
+            > svg {
+                opacity: 1;
+            }
+        }
+    }
+}

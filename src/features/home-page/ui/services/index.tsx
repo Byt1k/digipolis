@@ -1,9 +1,9 @@
-"use client";
+'use client'
 
-import React from "react";
-import {Button, Container, services} from "@/shared";
-import s from "./index.module.scss";
-import {Element, Link} from "react-scroll";
+import React from 'react'
+import { Button, Container, services } from '@/shared'
+import s from './index.module.scss'
+import { Element, Link } from 'react-scroll'
 
 export const Services: React.FC = () => {
     return (
@@ -19,7 +19,7 @@ export const Services: React.FC = () => {
                                 </Link>
                             </Button>
                         </div>
-                        {services.webSites.map((service) => (
+                        {services.webSites.map(service => (
                             <div key={service.name} className={s.item}>
                                 <div className={s.icon}>{service.icon}</div>
                                 <p>{service.name}</p>
@@ -35,7 +35,7 @@ export const Services: React.FC = () => {
                                 </Link>
                             </Button>
                         </div>
-                        {services.design.map((service) => (
+                        {services.design.map(service => (
                             <div key={service.name} className={s.item}>
                                 <div className={s.icon}>{service.icon}</div>
                                 <p>{service.name}</p>
@@ -53,7 +53,7 @@ export const Services: React.FC = () => {
                                 </Link>
                             </Button>
                         </div>
-                        {services.infrastructure.map((service) => (
+                        {services.infrastructure.map(service => (
                             <div key={service.name} className={s.item}>
                                 <div className={s.icon}>{service.icon}</div>
                                 <p>{service.name}</p>
@@ -63,7 +63,7 @@ export const Services: React.FC = () => {
                     <div className={s.sector}>
                         <div className={s.title}>
                             <h3>
-                                Поддержка <br/>и обслуживание
+                                Поддержка <br />и обслуживание
                             </h3>
                             <Button variant="secondary" className={s.btn}>
                                 <Link to="form" smooth>
@@ -71,7 +71,7 @@ export const Services: React.FC = () => {
                                 </Link>
                             </Button>
                         </div>
-                        {services.support.map((service) => (
+                        {services.support.map(service => (
                             <div key={service.name} className={s.item}>
                                 <div className={s.icon}>{service.icon}</div>
                                 <p>{service.name}</p>
@@ -81,5 +81,5 @@ export const Services: React.FC = () => {
                 </div>
             </Container>
         </Element>
-    );
-};
+    )
+}

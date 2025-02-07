@@ -1,0 +1,42 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    border-radius: 15px;
+    padding: 15px 30px;
+    transition: all 0.3s ease;
+    font-size: 18px;
+    font-weight: 600;
+
+    &.primary {
+        background-color: #3162e0;
+        color: #fff;
+
+        &:hover {
+            background-color: #2452c6;
+        }
+    }
+
+    &.secondary {
+        background-color: #fff;
+        color: #3162e0;
+
+        &:hover {
+            background-color: #ebebeb;
+        }
+    }
+
+    &.dark {
+        background-color: #424242;
+        color: #fff;
+
+        &:hover {
+            background-color: #4e4e4e;
+        }
+    }
+
+    &:disabled {
+        opacity: 0.5;
+    }
+}
