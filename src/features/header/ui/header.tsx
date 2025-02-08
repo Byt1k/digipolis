@@ -59,7 +59,7 @@ export const Header: React.FC = () => {
                 })}
             >
                 <Container className="flex flex-col grow">
-                    <Menu className={s.mobileMenuList} />
+                    <Menu className={s.mobileMenuList} onClickLink={() => setIsOpenedMobileMenu(false)} />
                     <div className={s.contacts}>
                         <div>
                             <a href="tel:+79999199009">+7 (999) 919-90-09</a>
