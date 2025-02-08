@@ -11,13 +11,10 @@ export const Advantages: React.FC = () => {
         <Element name="advantages" className={s.advantages}>
             <Container>
                 <div className={s.title}>
-                    <div>
-                        <span>преимущества</span>
-                        <h2>
-                            Цели и ценности <br />
-                            компании
-                        </h2>
-                    </div>
+                    <h2>
+                        Цели и ценности <br />
+                        компании
+                    </h2>
                     <p>
                         Оказываем профессиональные консультации, направленные на
                         достижение наилучших результатов для наших клиентов.

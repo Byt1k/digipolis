@@ -1,0 +1,72 @@
+@media screen and (max-width: 1500px) {
+    .menu {
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .top,
+    .topMenu,
+    .actions .media {
+        display: none;
+    }
+
+    .burgerBtn {
+        display: flex;
+    }
+
+    .actions {
+        .mailBtn {
+            width: 45px;
+            height: 45px;
+            padding: 0;
+            border-radius: 50%;
+
+            span {
+                display: none;
+            }
+
+            svg {
+                display: block;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+}
+
+@media screen and (max-width: 767px) {
+    .bottomContainer {
+        padding: 10px 15px !important;
+    }
+
+    .logo {
+        width: 165px;
+    }
+
+    .actions {
+        .mailBtn {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    .mobileMenu {
+        .mobileMenuList {
+            a {
+                font-size: 18px;
+            }
+        }
+
+        .contacts {
+            a {
+                font-size: 18px;
+            }
+
+            span {
+                font-size: 13px;
+            }
+        }
+    }
+}

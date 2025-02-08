@@ -58,6 +58,7 @@ export const Calculator: React.FC = () => {
                                             index: i,
                                         })
                                     }
+                                    className={s.checkbox}
                                 />
                                 <p className={s.title}>{service.name}</p>
                                 <p
@@ -71,7 +72,13 @@ export const Calculator: React.FC = () => {
                     >
                         <div>
                             <span>Итого</span>
-                            {!!total && <p>от {total} ₽</p>}
+                            <p
+                                className={classNames({
+                                    'opacity-0 pointer-events-none': !total,
+                                })}
+                            >
+                                от {total} ₽
+                            </p>
                         </div>
                         <Button className={s.btn} disabled={!total}>
                             Оставить заявку

@@ -7,18 +7,18 @@
         justify-content: space-between;
         margin-bottom: 30px;
 
-        span {
-            color: #a1a1a1;
-            font-size: 18px;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
+        //span {
+        //    color: #a1a1a1;
+        //    font-size: 18px;
+        //    font-weight: 600;
+        //    display: inline-block;
+        //    margin-bottom: 20px;
+        //}
 
         p {
-            width: 530px;
-            color: #434343;
-            font-size: 16px;
+            width: 540px;
+            //color: #434343;
+            font-size: 18px;
             line-height: 144%;
         }
     }
@@ -58,3 +58,5 @@
         }
     }
 }
+
+@import 'responsive.module';

@@ -1,0 +1,27 @@
+@media screen and (max-width: 1500px) {
+}
+
+@media screen and (max-width: 1200px) {
+    .team {
+        .text {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+}
+
+@media screen and (max-width: 767px) {
+    .team {
+        padding: 70px 0 0;
+
+        .title {
+            margin-bottom: 30px;
+        }
+
+        .text {
+            font-size: 16px;
+        }
+    }
+}

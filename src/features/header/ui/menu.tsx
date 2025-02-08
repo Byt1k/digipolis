@@ -3,10 +3,11 @@
 import React from 'react'
 import s from '@/features/header/ui/header.module.scss'
 import { Link } from 'react-scroll/modules'
+import classNames from 'classnames'
 
-const Menu: React.FC = () => {
+const Menu: React.FC<{ className?: string }> = ({ className }) => {
     return (
-        <nav className={s.menu}>
+        <nav className={classNames(s.menu, className)}>
             <Link to="services" smooth>
                 Услуги
             </Link>

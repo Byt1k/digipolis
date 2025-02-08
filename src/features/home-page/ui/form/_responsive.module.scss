@@ -1,0 +1,93 @@
+@media screen and (max-width: 1500px) {
+    .form {
+        .container {
+            gap: 50px;
+        }
+
+        .title {
+            min-width: 500px;
+        }
+
+        .grid {
+            column-gap: 50px;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .form {
+        .container {
+            gap: 30px;
+        }
+
+        .title {
+            min-width: 450px;
+        }
+
+        .grid {
+            gap: 20px 30px;
+        }
+
+        .btn {
+            height: 55px;
+            grid-column: span 2;
+        }
+
+        .error {
+            grid-column: span 2;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .form {
+        .container {
+            gap: 0;
+            flex-direction: column;
+        }
+
+        .title {
+            min-width: auto;
+
+            img {
+                display: none;
+            }
+        }
+
+        .grid {
+            gap: 20px 30px;
+        }
+
+        .btn {
+            height: 55px;
+            grid-column: span 2;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .form {
+        padding: 70px 0;
+
+        .title {
+            span {
+                width: 100%;
+            }
+        }
+
+        .grid {
+            grid-template-columns: 1fr;
+        }
+
+        .grid .fullWidth,
+        .btn,
+        .error {
+            grid-column: 1;
+        }
+
+        .checkbox {
+            width: 100%;
+            margin-top: 10px;
+        }
+    }
+}

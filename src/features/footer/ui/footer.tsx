@@ -8,7 +8,7 @@ import Image from 'next/image'
 export const Footer: React.FC = () => {
     return (
         <footer className={s.footer}>
-            <Container className={s.grid}>
+            <Container className={classNames(s.grid, s.top)}>
                 <Link href="/" className={s.logo}>
                     <Image
                         src="/logo.svg"
@@ -41,7 +41,7 @@ export const Footer: React.FC = () => {
                 </div>
             </Container>
 
-            <Container className={classNames(s.grid, s.credits)}>
+            <Container className={classNames(s.grid, s.bottom)}>
                 <p>© DIGIPOLIS 2025</p>
                 <a href="#">Политика обработки персональных данных</a>
                 <a href="#">Политика конфиденциальности</a>

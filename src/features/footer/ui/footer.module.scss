@@ -51,7 +51,7 @@
         }
     }
 
-    .credits {
+    .bottom {
         p {
             font-size: 20px;
             font-weight: 500;
@@ -64,3 +64,5 @@
         }
     }
 }
+
+@import 'responsive.module';

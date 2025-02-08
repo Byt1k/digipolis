@@ -21,10 +21,10 @@ export const MainScreen: React.FC = () => {
                 </div>
                 <Image
                     src="/home-page/main-img-1.svg"
-                    className={s.main_illustration}
+                    className={s.main__illustration}
                     alt="main"
-                    width={866}
-                    height={735}
+                    width={690}
+                    height={5210}
                 />
             </Container>
         </section>

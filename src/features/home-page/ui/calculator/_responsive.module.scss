@@ -1,0 +1,93 @@
+@media screen and (max-width: 1500px) {
+}
+
+@media screen and (max-width: 1200px) {
+    .calculator {
+        .grid {
+            grid-template-columns: 1.5fr 1fr;
+            gap: 25px;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .calculator {
+        .grid {
+            grid-template: 1fr / 1fr;
+        }
+
+        .list {
+            grid-row: 1;
+        }
+
+        .total {
+            gap: 30px;
+        }
+
+        .image {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .calculator {
+        padding: 70px 0 0;
+
+        h2 {
+            margin-bottom: 30px;
+        }
+
+        .list {
+            padding: 15px;
+
+            h4 {
+                display: none;
+            }
+
+            .item {
+                display: grid;
+                align-items: flex-start;
+                grid-template-columns: 30px 1fr;
+                gap: 10px 15px;
+                padding: 15px 0;
+
+                .checkbox {
+                    grid-row: span 2;
+                }
+
+                .title {
+                    font-size: 16px;
+                    line-height: 110%;
+                    margin: 0;
+                }
+
+                .price {
+                    margin-left: 0;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .total {
+            padding: 30px 15px 15px;
+
+            > div {
+                line-height: 110%;
+
+                span {
+                    font-size: 16px;
+                }
+
+                p {
+                    font-size: 28px;
+                }
+            }
+
+            .btn {
+                height: 55px;
+                font-size: 15px;
+            }
+        }
+    }
+}
