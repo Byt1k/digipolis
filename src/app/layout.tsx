@@ -1,9 +1,13 @@
 import React from 'react'
 import type { Metadata } from 'next'
+import { cookies } from 'next/headers'
 import './globals.scss'
 import { montserrat, phonk_sans } from '@/fonts'
 import StoreProvider from '@/app/store-provider'
 import { ToastContainer } from 'react-toastify'
+import { Analytics, CookieConsent } from '@/shared'
+import { Header } from '@/features/header'
+import { Footer } from '@/features/footer'
 
 export const metadata: Metadata = {
     title: 'Создание сайтов под ключ | DIGIPOLIS - профессиональная веб студия',
@@ -28,18 +32,27 @@ export const metadata: Metadata = {
     ],
 }
 
-export default function RootLayout({
+export default async function RootLayout({
     children,
 }: Readonly<{
     children: React.ReactNode
 }>) {
+    const cookieStore = await cookies()
+    const cookieConsent = cookieStore.get('digipolis_cookie_consent')
+
     return (
         <html lang="en">
             <body
                 className={`${montserrat.variable} ${phonk_sans.variable} antialiased`}
             >
                 <ToastContainer position="top-right" />
-                <StoreProvider>{children}</StoreProvider>
+                <StoreProvider>
+                    <Header />
+                    {children}
+                    <Footer />
+                </StoreProvider>
+                <Analytics />
+                <CookieConsent consent={!!cookieConsent} />
             </body>
         </html>
     )
