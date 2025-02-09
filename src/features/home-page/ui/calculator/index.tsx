@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import { Button, calculatorServices, Container } from '@/shared'
 import s from './index.module.scss'
-import { Element } from 'react-scroll'
+import { Element, scroller } from 'react-scroll'
 import classNames from 'classnames'
 import { Checkbox } from '@/shared/ui/checkbox'
 import {
@@ -62,7 +62,11 @@ export const Calculator: React.FC = () => {
                                 от {total} ₽
                             </p>
                         </div>
-                        <Button className={s.btn} disabled={!total}>
+                        <Button
+                            className={s.btn}
+                            disabled={!total}
+                            onClick={() => scroller.scrollTo('form', { smooth: true })}
+                        >
                             Оставить заявку
                         </Button>
                     </div>
