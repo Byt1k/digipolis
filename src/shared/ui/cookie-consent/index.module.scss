@@ -1,33 +1,33 @@
 .wrapper {
-  width: 1100px;
-  position: fixed;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #3162e0;
-  border-radius: 20px;
-  color: #fff;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  gap: 30px;
+    width: 1100px;
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #3162e0;
+    border-radius: 20px;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
 
-  @media screen and (max-width: 1200px) {
-    width: calc(100% - 20px);
-  }
-
-  @media screen and (max-width: 991px) {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  @media screen and (max-width: 767px) {
-    font-size: 14px;
-
-    button {
-      height: 50px;
-      font-size: 15px;
-      width: 100%;
+    @media screen and (max-width: 1200px) {
+        width: calc(100% - 20px);
     }
-  }
+
+    @media screen and (max-width: 991px) {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    @media screen and (max-width: 767px) {
+        font-size: 14px;
+
+        button {
+            height: 50px;
+            font-size: 15px;
+            width: 100%;
+        }
+    }
 }

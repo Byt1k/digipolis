@@ -36,4 +36,33 @@
     }
 }
 
+.main.darkScreen {
+    background: none;
+    padding-top: 20px;
+
+    .main__illustration {
+        display: none;
+    }
+
+    .container {
+        padding: 50px;
+        border-radius: 30px;
+        background: url('/home-page/main-bg-dark.png') no-repeat center / cover;
+    }
+
+    .offer {
+        color: #fff;
+
+        h1 {
+            font-weight: 500;
+
+            span {
+                background-image: linear-gradient(to right, #ffffff, #3162e0);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    }
+}
+
 @import 'responsive.module';

@@ -18,13 +18,16 @@ export const Footer: React.FC = () => {
                             height={53}
                         />
                     </Link>
-                    <p className="mt-5">ООО &#34;ДИДЖИПОЛИС&#34; - работаем по всему миру</p>
+                    <p className="mt-5">
+                        ООО &#34;ДИДЖИПОЛИС&#34; - работаем по всему миру
+                    </p>
                 </div>
 
                 <div>
                     <p className={s.address}>
-                        Юридический адрес: <br/>г. Раменское, ул. Москворецкая, д.1Б, офис 2 <br/>(встречи по
-                        предварительной записи)
+                        Юридический адрес: <br />
+                        г. Раменское, ул. Москворецкая, д.1Б, офис 2 <br />
+                        (встречи по предварительной записи)
                     </p>
 
                     <p></p>
@@ -41,7 +44,9 @@ export const Footer: React.FC = () => {
                         {/*<span>Ежедневно с 9:00 до 20:00</span>*/}
                     </div>
                     <div className={s.contact}>
-                        <a href="mailto:digipolis.lab@gmail.com">digipolis.lab@gmail.com</a>
+                        <a href="mailto:digipolis.lab@gmail.com">
+                            digipolis.lab@gmail.com
+                        </a>
                     </div>
                 </div>
             </Container>

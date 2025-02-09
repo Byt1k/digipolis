@@ -1,17 +1,17 @@
 import React from 'react'
 import type { Metadata } from 'next'
-import { cookies } from 'next/headers'
 import './globals.scss'
 import { montserrat, phonk_sans } from '@/fonts'
 import StoreProvider from '@/app/store-provider'
 import { ToastContainer } from 'react-toastify'
-import { Analytics, CookieConsent } from '@/shared'
+import { Analytics, CookieConsent, verifyCookieConsent } from '@/shared'
 import { Header } from '@/features/header'
 import { Footer } from '@/features/footer'
 
 export const metadata: Metadata = {
     title: 'Создание сайтов под ключ | DIGIPOLIS - профессиональная веб студия',
-    description: 'Закажите разработку веб сайтов и программ у профессионалов. Мы создадим сайт, который привлечет клиентов, и предложим комплексные решения — от уникальной идеи до полноценной поддержки!',
+    description:
+        'Закажите разработку веб сайтов и программ у профессионалов. Мы создадим сайт, который привлечет клиентов, и предложим комплексные решения — от уникальной идеи до полноценной поддержки!',
     keywords: [
         'создание сайтов',
         'создания веб сайта',
@@ -37,8 +37,7 @@ export default async function RootLayout({
 }: Readonly<{
     children: React.ReactNode
 }>) {
-    const cookieStore = await cookies()
-    const cookieConsent = cookieStore.get('digipolis_cookie_consent')
+    const isCookieConsent = await verifyCookieConsent()
 
     return (
         <html lang="en">
@@ -52,7 +51,7 @@ export default async function RootLayout({
                     <Footer />
                 </StoreProvider>
                 <Analytics />
-                <CookieConsent consent={!!cookieConsent} />
+                <CookieConsent consent={isCookieConsent} />
             </body>
         </html>
     )

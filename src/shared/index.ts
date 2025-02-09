@@ -6,6 +6,7 @@ export { BurgerBtn } from './ui/burger-btn'
 export { CookieConsent } from './ui/cookie-consent'
 
 export { setCookieAction } from './actions/set-cookie'
+export { verifyCookieConsent } from './actions/verify-cookie-consent'
 
 export { svgIcons } from './utils/svg-icons'
 export { Analytics } from './utils/analytics'

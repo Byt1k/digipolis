@@ -65,7 +65,9 @@ export const Calculator: React.FC = () => {
                         <Button
                             className={s.btn}
                             disabled={!total}
-                            onClick={() => scroller.scrollTo('form', { smooth: true })}
+                            onClick={() =>
+                                scroller.scrollTo('form', { smooth: true })
+                            }
                         >
                             Оставить заявку
                         </Button>

@@ -135,13 +135,13 @@ export const Form: React.FC = () => {
                     >
                         <span>
                             Отправляя форму, я подтверждаю, что ознакомился с{' '}
-                        <a
-                            href="https://digipolis.tech/c/doc/DigiPolis_Privacy_Policy.pdf"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            политикой обработки персональных данных
-                        </a>
+                            <a
+                                href="https://digipolis.tech/c/doc/DigiPolis_Privacy_Policy.pdf"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                политикой обработки персональных данных
+                            </a>
                         </span>
                     </Checkbox>
 

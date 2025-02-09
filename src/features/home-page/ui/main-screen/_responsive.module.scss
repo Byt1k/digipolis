@@ -77,4 +77,17 @@
             }
         }
     }
+
+    .main.darkScreen {
+        .container {
+            width: calc(100% - 30px);
+            padding: 245px 15px 20px !important;
+        }
+
+        .offer {
+            .btn {
+                font-size: 15px;
+            }
+        }
+    }
 }
