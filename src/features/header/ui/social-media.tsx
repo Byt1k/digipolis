@@ -8,10 +8,18 @@ export const SocialMedia: React.FC<{ className?: string }> = ({
 }) => {
     return (
         <div className={classNames(s.socialMedia, className)}>
-            <Button variant="dark" className={s.btn}>
+            <Button
+                variant="dark"
+                className={s.btn}
+                onClick={() => window.open('https://vk.com/digipolis.tech')}
+            >
                 {svgIcons.media.vk}
             </Button>
-            <Button variant="dark" className={s.btn}>
+            <Button
+                variant="dark"
+                className={s.btn}
+                onClick={() => window.open('https://t.me/digipolis_tech')}
+            >
                 {svgIcons.media.telegram}
             </Button>
         </div>

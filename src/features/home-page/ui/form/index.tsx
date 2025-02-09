@@ -133,8 +133,16 @@ export const Form: React.FC = () => {
                         onChange={v => setIsAgree(v)}
                         className={classNames(s.fullWidth, s.checkbox)}
                     >
-                        Отправляя форму, я подтверждаю, что ознакомился с
-                        политикой обработки персональных данных
+                        <span>
+                            Отправляя форму, я подтверждаю, что ознакомился с{' '}
+                        <a
+                            href="https://digipolis.tech/c/doc/DigiPolis_Privacy_Policy.pdf"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            политикой обработки персональных данных
+                        </a>
+                        </span>
                     </Checkbox>
 
                     <Button className={s.btn} disabled={isPending}>

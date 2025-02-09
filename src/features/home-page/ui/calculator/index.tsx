@@ -30,7 +30,7 @@ export const Calculator: React.FC = () => {
                 <h2>Калькулятор</h2>
                 <div className={s.grid}>
                     <div className={s.list}>
-                        <h4>Выберите тариф</h4>
+                        <h4>Выберите услуги</h4>
                         {calculatorServices.map(service => (
                             <div key={service.name} className={s.item}>
                                 <Checkbox

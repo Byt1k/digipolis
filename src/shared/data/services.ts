@@ -77,7 +77,7 @@ export const services: [IService[], IService[]] = [
                 },
                 {
                     icon: svgIcons.services.infrastructure.integration,
-                    name: 'Интеграфия с внешними системами',
+                    name: 'Интеграция с внешними системами',
                 },
                 {
                     icon: svgIcons.services.infrastructure.automation,

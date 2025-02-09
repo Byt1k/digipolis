@@ -25,8 +25,8 @@ export const Header: React.FC = () => {
         <header className={s.header}>
             <div className={s.top}>
                 <Container className={s.topContainer}>
-                    <a href="tel:+78122191009">+7 (812) 219 10 09</a>
-                    <a href="mailto:digi@polis.com">digi@polis.com</a>
+                    <a href="tel:+79060110234">+7 (906) 011 0234</a>
+                    <a href="mailto:digipolis.lab@gmail.com">digipolis.lab@gmail.com</a>
                 </Container>
             </div>
             <Container className={s.bottomContainer}>
@@ -71,11 +71,10 @@ export const Header: React.FC = () => {
                     />
                     <div className={s.contacts}>
                         <div>
-                            <a href="tel:+79999199009">+7 (999) 919-90-09</a>
-                            <span>Ежедневно с 9:00 до 20:00</span>
+                            <a href="tel:+79060110234">+7 (906) 011 0234</a>
                         </div>
                         <div>
-                            <a href="mailto:digi@polis.com">digi@polis.com</a>
+                            <a href="mailto:digipolis.lab@gmail.com">digipolis.lab@gmail.com</a>
                         </div>
                     </div>
                     <SocialMedia />
