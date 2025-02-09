@@ -1,7 +1,10 @@
+'use client'
+
 import React from 'react'
 import { Button, Container } from '@/shared'
 import s from './index.module.scss'
 import Image from 'next/image'
+import { scroller } from 'react-scroll'
 
 export const MainScreen: React.FC = () => {
     return (
@@ -15,7 +18,12 @@ export const MainScreen: React.FC = () => {
                         помочь вам получить высококлассный продукт, экономя ваше
                         время и ресурсы
                     </p>
-                    <Button className={s.btn}>
+                    <Button
+                        className={s.btn}
+                        onClick={() =>
+                            scroller.scrollTo('form', { smooth: true })
+                        }
+                    >
                         Получить бесплатную консультацию
                     </Button>
                 </div>

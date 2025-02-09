@@ -53,7 +53,7 @@
             }
 
             &.selected {
-                .content button {
+                .content button.active {
                     pointer-events: auto;
                     opacity: 1;
                 }

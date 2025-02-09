@@ -5,7 +5,10 @@ import s from '@/features/header/ui/header.module.scss'
 import { Link } from 'react-scroll/modules'
 import classNames from 'classnames'
 
-const Menu: React.FC<{ className?: string, onClickLink?: () => void }> = ({ className, onClickLink }) => {
+const Menu: React.FC<{ className?: string; onClickLink?: () => void }> = ({
+    className,
+    onClickLink,
+}) => {
     return (
         <nav className={classNames(s.menu, className)}>
             <Link to="services" smooth onClick={onClickLink}>

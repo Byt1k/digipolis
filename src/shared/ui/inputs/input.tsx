@@ -18,9 +18,9 @@ export const Input: React.FC<Props> = ({
         <div className={classNames(s.wrapper, className)}>
             {/*<label htmlFor={inputId}>{label}</label>*/}
             <input id={inputId} {...props} />
-            {!props.required && (
-                <span className={s.notRequired}>необязательно</span>
-            )}
+            {/*{!props.required && (*/}
+            {/*    <span className={s.notRequired}>необязательно</span>*/}
+            {/*)}*/}
         </div>
     )
 }

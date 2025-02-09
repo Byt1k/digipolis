@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import { BurgerBtn, Button, Container, svgIcons } from '@/shared'
 import Link from 'next/link'
+import { scroller } from 'react-scroll'
 import Image from 'next/image'
 import Menu from './menu'
 import { SocialMedia } from './social-media'
@@ -45,7 +46,12 @@ export const Header: React.FC = () => {
                 <Menu className={s.topMenu} />
                 <div className={s.actions}>
                     <SocialMedia className={s.media} />
-                    <Button className={s.mailBtn}>
+                    <Button
+                        className={s.mailBtn}
+                        onClick={() =>
+                            scroller.scrollTo('form', { smooth: true })
+                        }
+                    >
                         <span>Написать нам</span>
                         {svgIcons.button.comment}
                     </Button>
@@ -59,7 +65,10 @@ export const Header: React.FC = () => {
                 })}
             >
                 <Container className="flex flex-col grow">
-                    <Menu className={s.mobileMenuList} onClickLink={() => setIsOpenedMobileMenu(false)} />
+                    <Menu
+                        className={s.mobileMenuList}
+                        onClickLink={() => setIsOpenedMobileMenu(false)}
+                    />
                     <div className={s.contacts}>
                         <div>
                             <a href="tel:+79999199009">+7 (999) 919-90-09</a>

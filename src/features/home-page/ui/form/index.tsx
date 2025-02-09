@@ -6,6 +6,10 @@ import s from './index.module.scss'
 import { Checkbox } from '@/shared/ui/checkbox'
 import classNames from 'classnames'
 import Image from 'next/image'
+import { Element } from 'react-scroll'
+import { useAppSelector } from '@/shared/client'
+import { sendMail, SendMailBody } from '../../actions/send-mail'
+import { toast } from 'react-toastify'
 
 interface FormState {
     data: {
@@ -18,6 +22,8 @@ interface FormState {
 }
 
 export const Form: React.FC = () => {
+    const homePageState = useAppSelector(state => state.homePage)
+
     const initialFormState: FormState = {
         data: {
             name: '',
@@ -39,11 +45,31 @@ export const Form: React.FC = () => {
         if (!isAgree) {
             return {
                 data,
-                error: 'Подтверждение ознакомления с политикой обработки персональных данных обязательно.',
+                error: 'Подтверждение ознакомления с политикой обработки персональных данных обязательно',
+            }
+        }
+
+        if (!data.tel && !data.email) {
+            return {
+                data,
+                error: 'Укажите номер телефона или email',
             }
         }
 
         try {
+            const body: SendMailBody = {
+                ...data,
+                service: homePageState.service,
+                cases: homePageState.cases.map(c => c.name).join(',\n'),
+                calculatorServices: homePageState.calculatorServices
+                    .map(c => c.name)
+                    .join(',\n'),
+            }
+
+            await sendMail(body)
+
+            toast.success('Заявка успешно отправлена!')
+
             return initialFormState
         } catch (e: any) {
             return {
@@ -59,7 +85,7 @@ export const Form: React.FC = () => {
     )
 
     return (
-        <section className={s.form}>
+        <Element name="form" className={s.form}>
             <Container className={s.container}>
                 <div className={s.title}>
                     <p>Готовы сотрудничать?</p>
@@ -78,21 +104,19 @@ export const Form: React.FC = () => {
                     <Input
                         className={s.fullWidth}
                         type="text"
-                        required
                         name="name"
+                        required
                         placeholder="Имя"
                         defaultValue={formState.data.name}
                     />
                     <Input
                         type="tel"
-                        required
                         name="tel"
                         placeholder="Телефон"
                         defaultValue={formState.data.tel}
                     />
                     <Input
                         type="email"
-                        required
                         name="email"
                         placeholder="E-mail"
                         defaultValue={formState.data.email}
@@ -123,6 +147,6 @@ export const Form: React.FC = () => {
                     )}
                 </form>
             </Container>
-        </section>
+        </Element>
     )
 }

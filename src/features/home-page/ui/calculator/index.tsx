@@ -1,45 +1,28 @@
 'use client'
 
-import React, { useCallback, useEffect, useState } from 'react'
-import {
-    Button,
-    calculatorServices,
-    Container,
-    ICalculatorService,
-} from '@/shared'
+import React, { useEffect, useState } from 'react'
+import { Button, calculatorServices, Container } from '@/shared'
 import s from './index.module.scss'
 import { Element } from 'react-scroll'
 import classNames from 'classnames'
 import { Checkbox } from '@/shared/ui/checkbox'
-
-interface SelectedCalculatorService extends ICalculatorService {
-    index: number
-}
+import {
+    changeCalcServices,
+    useAppDispatch,
+    useAppSelector,
+} from '@/shared/client'
 
 export const Calculator: React.FC = () => {
-    const [selected, setSelected] = useState<SelectedCalculatorService[]>([])
+    const dispatch = useAppDispatch()
+    const { calculatorServices: selectedServices } = useAppSelector(
+        state => state.homePage,
+    )
     const [total, setTotal] = useState(0)
 
-    const toggleSelected = useCallback(
-        (
-            selected: SelectedCalculatorService[],
-            newService: SelectedCalculatorService,
-        ) => {
-            if (selected.some(s => s.index === newService.index)) {
-                setSelected(prev =>
-                    prev.filter(s => s.index !== newService.index),
-                )
-            } else {
-                setSelected(prev => [newService, ...prev])
-            }
-        },
-        [],
-    )
-
     useEffect(() => {
-        const res = selected.reduce((acc, { price }) => acc + price, 0)
+        const res = selectedServices.reduce((acc, { price }) => acc + price, 0)
         setTotal(res)
-    }, [selected])
+    }, [selectedServices])
 
     return (
         <Element name="calculator" className={s.calculator}>
@@ -48,15 +31,14 @@ export const Calculator: React.FC = () => {
                 <div className={s.grid}>
                     <div className={s.list}>
                         <h4>Выберите тариф</h4>
-                        {calculatorServices.map((service, i) => (
-                            <div key={i} className={s.item}>
+                        {calculatorServices.map(service => (
+                            <div key={service.name} className={s.item}>
                                 <Checkbox
-                                    checked={selected.some(s => s.index === i)}
+                                    checked={selectedServices.some(
+                                        s => s.name === service.name,
+                                    )}
                                     onChange={() =>
-                                        toggleSelected(selected, {
-                                            ...service,
-                                            index: i,
-                                        })
+                                        dispatch(changeCalcServices(service))
                                     }
                                     className={s.checkbox}
                                 />

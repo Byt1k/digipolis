@@ -5,8 +5,11 @@ export { Textarea } from './ui/inputs/textarea'
 export { BurgerBtn } from './ui/burger-btn'
 
 export { svgIcons } from './utils/svg-icons'
-export { services } from './utils/services'
-export { cases } from './utils/cases'
 
-export { calculatorServices } from './utils/calculator'
-export type { ICalculatorService } from './utils/calculator'
+export { services } from './data/services'
+export { cases } from './data/cases'
+export { calculatorServices } from './data/calculator'
+export type { ICalculatorService } from './data/calculator'
+
+export { makeStore } from './store/store'
+export type { AppStore } from './store/store'

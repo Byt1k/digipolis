@@ -2,6 +2,8 @@ import React from 'react'
 import type { Metadata } from 'next'
 import './globals.scss'
 import { montserrat, phonk_sans } from '@/fonts'
+import StoreProvider from '@/app/store-provider'
+import { ToastContainer } from 'react-toastify'
 
 export const metadata: Metadata = {
     title: 'Create Next App',
@@ -18,7 +20,8 @@ export default function RootLayout({
             <body
                 className={`${montserrat.variable} ${phonk_sans.variable} antialiased`}
             >
-                {children}
+                <ToastContainer position="top-right" />
+                <StoreProvider>{children}</StoreProvider>
             </body>
         </html>
     )

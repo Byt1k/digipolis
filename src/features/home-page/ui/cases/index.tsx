@@ -1,44 +1,65 @@
 'use client'
 
-import React, { useCallback, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, cases, Container, svgIcons } from '@/shared'
 import s from './index.module.scss'
-import { Element } from 'react-scroll'
+import { Element, scroller } from 'react-scroll'
 import classNames from 'classnames'
+import { useAppDispatch, useAppSelector, changeCases } from '@/shared/client'
 
 export const Cases: React.FC = () => {
-    const [selected, setSelected] = useState<number[]>([])
+    const dispatch = useAppDispatch()
+    const { cases: selectedCases } = useAppSelector(state => state.homePage)
 
-    const toggleSelected = useCallback((selected: number[], index: number) => {
-        if (selected.some(i => i === index)) {
-            setSelected(prev => prev.filter(i => i !== index))
-        } else {
-            setSelected(prev => [index, ...prev])
+    const [maxIndex, setMaxIndex] = useState(0)
+
+    useEffect(() => {
+        let max = 0
+
+        for (const item of selectedCases) {
+            if (item.index > max) {
+                max = item.index
+            }
         }
-    }, [])
+
+        setMaxIndex(max)
+    }, [selectedCases])
 
     return (
         <Element name="cases" className={s.cases}>
             <Container>
                 <h2>Кейсы</h2>
                 <div className={s.wrapper}>
-                    {cases.map((name, i) => (
+                    {cases.map((item, index) => (
                         <div
-                            key={i}
+                            key={index}
                             className={classNames(s.item, {
-                                [s.selected]: selected.some(
-                                    index => i === index,
+                                [s.selected]: selectedCases.some(
+                                    c => c.index === index,
                                 ),
                             })}
                         >
-                            <div className={s.number}>{i + 1}</div>
+                            <div className={s.number}>{index + 1}</div>
                             <div className={s.content}>
-                                <p>{name}</p>
-                                <Button>Оставить заявку</Button>
+                                <p>{item}</p>
+                                <Button
+                                    className={classNames({
+                                        [s.active]: index === maxIndex,
+                                    })}
+                                    onClick={() =>
+                                        scroller.scrollTo('form', {
+                                            smooth: true,
+                                        })
+                                    }
+                                >
+                                    Оставить заявку
+                                </Button>
                             </div>
                             <button
                                 className={s.selectBtn}
-                                onClick={() => toggleSelected(selected, i)}
+                                onClick={() =>
+                                    dispatch(changeCases({ name: item, index }))
+                                }
                             >
                                 {svgIcons.check}
                             </button>

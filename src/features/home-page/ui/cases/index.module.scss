@@ -60,8 +60,10 @@
                 color: #3162e0;
             }
 
-            .content button {
-                display: inline-flex;
+            .content {
+                button.active {
+                    display: inline-flex;
+                }
             }
 
             .selectBtn {
