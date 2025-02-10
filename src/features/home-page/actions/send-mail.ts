@@ -22,10 +22,9 @@ export const sendMail = async ({
     message,
 }: SendMailBody): Promise<void> => {
     const transporter = nodemailer.createTransport({
-        // @ts-ignore
         host: process.env.SMTP_HOST,
-        port: process.env.SMTP_PORT,
-        secure: Boolean(process.env.SMTP_SECURE),
+        port: Number(process.env.SMTP_PORT),
+        secure: process.env.SMTP_SECURE !== 'false',
         auth: {
             user: process.env.EMAIL_USER,
             pass: process.env.EMAIL_PASSWORD,
